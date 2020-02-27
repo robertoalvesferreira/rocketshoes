@@ -1,0 +1,8 @@
+//biblioteca de icones
+yarn add react-icons
+
+//consumir api
+yarn add axios
+
+//Auxiliar o get de prop
+yarn add prop-types
