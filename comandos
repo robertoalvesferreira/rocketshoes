@@ -9,3 +9,6 @@ yarn add prop-types
 
 //Adição da dependencia do reactotron com o reactotron redux
 yarn add reactotron-react-js reactotron-redux
+
+//'Immer' para tratar arrays
+yarn add immer
