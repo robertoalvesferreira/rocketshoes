@@ -12,3 +12,8 @@ yarn add reactotron-react-js reactotron-redux
 
 //'Immer' para tratar arrays
 yarn add immer
+
+yarn add redux-sage
+
+//Adicionando plugin do redux-sagaa
+yarn add reactotron-redux-saga
