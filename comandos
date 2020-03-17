@@ -17,3 +17,6 @@ yarn add redux-sage
 
 //Adicionando plugin do redux-sagaa
 yarn add reactotron-redux-saga
+
+//mensagens de erro
+yarn add react-toastify
