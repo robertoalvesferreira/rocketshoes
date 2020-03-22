@@ -20,3 +20,6 @@ yarn add reactotron-redux-saga
 
 //mensagens de erro
 yarn add react-toastify
+
+//ajuda nas rotas
+yarn add history

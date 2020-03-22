@@ -1,10 +1,13 @@
 import { call, select, put, all, takeLatest } from 'redux-saga/effects';
 import { toast } from 'react-toastify';
+
 import api from '../../../services/api';
+import history from '../../../services/history';
+
 import { addToCartSuccess, updateAmountSuccess } from './actions';
 import { formatPrice } from '../../../util/format';
 
-function* addToCart({ id }) {
+function* addToCartRequest({ id }) {
   const response = yield call(api.get, `/products/${id}`);
 
   const productExists = yield select(state =>
@@ -32,10 +35,12 @@ function* addToCart({ id }) {
     };
 
     yield put(addToCartSuccess(data));
+
+    history.push('/cart');
   }
 }
 
-function* updateAmount({ id, amount }) {
+function* updateAmountRequest({ id, amount }) {
   if (amount <= 0) return;
 
   const stock = yield call(api.get, `stock/${id}`);
@@ -49,6 +54,6 @@ function* updateAmount({ id, amount }) {
 }
 
 export default all([
-  takeLatest('@cart/ADD_REQUEST', addToCart),
-  takeLatest('@cart/UPDATE_AMOUNT_REQUEST', updateAmount),
+  takeLatest('@cart/ADD_REQUEST', addToCartRequest),
+  takeLatest('@cart/UPDATE_AMOUNT_REQUEST', updateAmountRequest),
 ]);
